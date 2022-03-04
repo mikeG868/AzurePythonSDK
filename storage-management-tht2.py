@@ -106,8 +106,11 @@ if __name__ == '__main__':
     #getBlobContainers(storage_client,GROUP_NAME,STORAGE_ACCOUNT)
     #createStorageAndBlob(storage_client,GROUP_NAME,STORAGE_ACCOUNT,BLOB_CONTAINER)
 
+    with open("./ignore.txt", 'r') as file:
+        lines = [line.rstrip() for line in file]
+    cstr = lines[0]
+
     blob_name="picture.png"
-    cstr= "BlobEndpoint=https://mikestorageawacademy.blob.core.windows.net/;QueueEndpoint=https://mikestorageawacademy.queue.core.windows.net/;FileEndpoint=https://mikestorageawacademy.file.core.windows.net/;TableEndpoint=https://mikestorageawacademy.table.core.windows.net/;SharedAccessSignature=sv=2020-08-04&ss=bf&srt=sco&sp=rwdlacitfx&se=2022-03-05T05:07:14Z&st=2022-03-03T21:07:14Z&spr=https&sig=fDiE68SumnfZqkJVMq2QvFLL99BT6GabALcS7Z9Tyf0%3D"
     filename = "./sample.png"
     downfile = "./downsample.png"
     #uploadfile(BLOB_CONTAINER,blob_name,cstr,filename)
