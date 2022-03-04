@@ -105,7 +105,8 @@ def deleteVault(GROUP_NAME, VAULT):
     )
     print("Delete vault.\n")
 
-def createSecret(secretName,secretValue,secret_client):
+def createSecret(secretName,secret_client):
+  secretValue = input("Input a value for your secret > ")
   print(f"Creating a secret in {keyVaultName} called '{secretName}' with the value '{secretValue}' ...")
 
   secret_client.set_secret(secretName, secretValue)
@@ -136,9 +137,9 @@ if __name__ == '__main__':
   #listVaults(GROUP_NAME)
   #createVault(GROUP_NAME,VAULT)
   # deleteVault(GROUP_NAME, VAULT)
-  secretName = input("Input a name for your secret > ")
-  secretValue = input("Input a value for your secret > ")
 
-  createSecret(secretName,secretValue,secret_client)
+  secretName = input("Input a name for your secret > ")
+
+  # createSecret(secretName,secret_client)
   retrieveSecret(secretName,secret_client)
-  deleteSecret(secretName,secret_client)
+  # deleteSecret(secretName,secret_client)

@@ -98,13 +98,13 @@ def deleteContainer(storage_client,GROUP_NAME,STORAGE_ACCOUNT,BLOB_CONTAINER):
 
 if __name__ == '__main__':
 
-    GROUP_NAME = "mikeRG-storage"
+    GROUP_NAME = "mikeRG"
     STORAGE_ACCOUNT = "mikestorageawacademy"
     BLOB_CONTAINER = "mike-blobcontainer"
 
     #createRG(GROUP_NAME)
     #getBlobContainers(storage_client,GROUP_NAME,STORAGE_ACCOUNT)
-    #createStorageAndBlob(storage_client,GROUP_NAME,STORAGE_ACCOUNT,BLOB_CONTAINER)
+    createStorageAndBlob(storage_client,GROUP_NAME,STORAGE_ACCOUNT,BLOB_CONTAINER)
 
     with open("./ignore.txt", 'r') as file:
         lines = [line.rstrip() for line in file]
